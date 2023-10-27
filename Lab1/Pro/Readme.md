@@ -1,3 +1,3 @@
 # Папка для ЛР№1 со звёздочкой
 
-Отчёт: [click](./Lab1ProReport.md)
+Отчёт находится в файле [Lab1ProReport.md](./Lab1ProReport.md)
