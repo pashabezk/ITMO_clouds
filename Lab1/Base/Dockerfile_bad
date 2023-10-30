@@ -1,0 +1,18 @@
+FROM ubuntu:latest
+
+WORKDIR /src
+
+# копирование исходного кода
+COPY ./src_bad /src
+
+# установка python
+RUN apt-get update
+RUN apt-get install -y python3 pip
+RUN pip install --no-cache-dir -r /src/requirements.txt
+
+# для работы бота необходим токен указанный в файле token.txt
+RUN touch /src/token.txt
+RUN echo -n 'abcd_your_token' >> /src/token.txt
+
+# запуск бота
+CMD ["python3", "/src/main.py"]
