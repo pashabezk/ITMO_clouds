@@ -4,7 +4,7 @@
 ## Команда
 
 * Безкоровайный Павел • K34211 • [pashabezk](https://github.com/pashabezk)
-* Долматов Дмитрий • K34212 •
+* Долматов Дмитрий • K34212 • [dimbikey](https://github.com/DimbikeY)
 * Коряков Сергей • K34201 • [rendex85](https://github.com/rendex85)
 * Кубашин Илья • K34211 • [kubachinIlya](https://github.com/kubachinIlya)
 
