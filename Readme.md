@@ -16,7 +16,7 @@
 
 1. Плохой/хороший dockerfile
 * базовая ([click](/Lab1/Base)) ✅
-* продвинутая ([click](/Lab1/Pro)) ❌
+* продвинутая ([click](/Lab1/Pro)) ✅
 
 2. Поднять kubernetes кластер
 * базовая ([click](/Lab2/Base)) ❌
