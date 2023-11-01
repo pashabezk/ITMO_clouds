@@ -14,9 +14,17 @@
 ## Как запустить:
 По пути `./Lab1/Pro/` Необходимо создать env-файл со следующей конфигурацией:
 ```
-$TEMP
-$TEMP
-$TEMP
+DEBUG=1
+SECRET_KEY=c%zfe934c9z_w*ee+a%2kpn(c*tb)31br7rlwv9!#95bmb9m(8
+DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+
+SQL_ENGINE=django.db.backends.postgresql
+SQL_DATABASE=great_django_db
+SQL_USER=siryoja
+SQL_PASSWORD=helpmeimdevops
+SQL_HOST=db
+SQL_PORT=5432
+DATABASE=postgres
 ```
 
 Далее в этой же папке неоходимо сбилидить и запустить контейнер с помощью комманд
@@ -24,9 +32,12 @@ $TEMP
 docker-compose build
 docker-compoes up
 ```
-Запущенный проект будет разворачиваться на loopback-адрессе на 8000-ом порте
+Для остановки контейнеров необходимо выполнить комманду
+```
+docker-compose stop
+```
+[Запущенный проект будет разворачиваться на loopback-адрессе на 8000-ом порте](http://localhost:8000/)
 
-вот тут будет адресс
 ## Основная часть
 
 ### Выбор проекта для контейнеризации
@@ -50,17 +61,9 @@ docker-compoes up
 
 **[/docker-compose.yml](./docker-compose.yml)** - Файл, запускающий контейнеры приложения и СУБД, пробрасывает порты для обоих контейнеров, реализует подключение к базе данных через env-файл и создает volume для данных
 
+### Результат
+После четырех запусков контейнера записалось четыре новые записи:
+
+<img src='./screen_of_lab.png' width='800'>
 
 
-`<img src='./images/img.png' width='300px'>`
-
-Оформление ссылок:
-
-`[видимая часть](link.com)`
-
-Больше правил оформления: https://gist.github.com/Jekins/2bf2d0638163f1294637
-
-Потестировать: https://markdown-editor.andona.click/
-
-## Вывод
-Текст выводыAdd report here 
