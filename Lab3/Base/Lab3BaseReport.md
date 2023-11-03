@@ -39,16 +39,16 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Login to Docker Hub
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
 
       - name: Build and push to Docker hub
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v5
         with:
           context: ./Lab3/Base/
           push: true
@@ -116,7 +116,7 @@ jobs:
 
 ```yml
 - name: Checkout repository
-  uses: actions/checkout@v3
+  uses: actions/checkout@v4
 ```
 
 #### 2. Авторизация в DockerHub
@@ -133,7 +133,7 @@ jobs:
 
 ```yml
 - name: Login to Docker Hub
-  uses: docker/login-action@v1
+  uses: docker/login-action@v3
   with:
     username: ${{ secrets.DOCKERHUB_USERNAME }}
     password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
@@ -159,7 +159,7 @@ jobs:
 
 ```yml
 - name: Build and push to Docker hub
-  uses: docker/build-push-action@v2
+  uses: docker/build-push-action@v5
   with:
     context: ./Lab3/Base/
     push: true
@@ -176,7 +176,13 @@ jobs:
 
 <img src='./images/Manually_start_workflow.png' width='400px'/>
 
+Можно зайти в конкретный workflow и посмотреть логи выполнения.
+
+<img src='./images/Action_progress.png' width='400px'/>
+
 Созданный образ появился на DockerHub.
+
+Страничка созданного образа: https://hub.docker.com/r/pashabezk/tic-tac-toe-tg-bot
 
 <img src='./images/DockerHub_ttt-tg-bot.png' width='400px'/>
 
