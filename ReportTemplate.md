@@ -20,9 +20,15 @@
 
 `[видимая часть](link.com)`
 
+Оформление кода. Не забывайте после кавычек прописывать тип кода для подсветки синтаксиса. Полный список тегов можно посмотреть [вот тут](https://github.com/github-linguist/linguist/blob/master/lib/linguist/languages.yml)
+
+```js
+// code here
+```
+
 Больше правил оформления: https://gist.github.com/Jekins/2bf2d0638163f1294637
 
 Потестировать: https://markdown-editor.andona.click/
 
 ## Вывод
-Текст выводы
+Текст вывода
