@@ -81,7 +81,7 @@ on:
 
 На рисунке ниже представлен раздел actions в репозитории
 
-> add photo
+<img src='./images/Actions_page.png' width='250px'/>
 
 ### Настройка задачи
 
@@ -166,5 +166,29 @@ jobs:
     tags: pashabezk/tic-tac-toe-tg-bot:${{ github.run_number }} , pashabezk/tic-tac-toe-tg-bot:latest
 ```
 
+## Демонстрация работы
+
+После того, как был сделан push в репозиторий в ветку `main`, workflow автоматически запустился.
+
+<img src='./images/Auto_start_workflow.png' width='400px'/>
+
+Также благодаря тому, что был указан `workflow_dispatch`, в окне созданного сценария появилась кнопка `Run workflow`, которая позволяет запустить сценарий вручную. Что и было сделано, чтобы удостовериться, что правильно создаются версии.
+
+<img src='./images/Manually_start_workflow.png' width='400px'/>
+
+Созданный образ появился на DockerHub.
+
+<img src='./images/DockerHub_ttt-tg-bot.png' width='400px'/>
+
+Чтобы его скачать и запустить, используйте команду ниже.
+
+```
+docker run -it --name my_bot -e TOKEN=abcd_your_token pashabezk/tic-tac-toe-tg-bot
+```
+
+На рисунке ниже видно, что контейнер подтянулся и запустился. Последней строчкой было выведено, что бот запущен.
+
+<img src='./images/Run_container.png' width='400px'/>
+
 ## Вывод
-Текст выводы
+В ходе выполнения лабораторной работы был настроен CI/CD workflow для автоматической сборки и публикации Docker образа при выполнении push в репозиторий. Проведены тесты работоспособности созданного workflow
