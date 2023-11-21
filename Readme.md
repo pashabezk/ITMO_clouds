@@ -19,8 +19,8 @@
 * продвинутая ([click](/Lab1/Pro)) ✅
 
 2. Поднять kubernetes кластер
-* базовая ([click](/Lab2/Base)) ❌
-* продвинутая ([click](/Lab2/Pro)) ❌
+* базовая ([click](/Lab2/Base)) ✅
+* продвинутая ([click](/Lab2/Pro)) ✅
 
 3. Автоматическая сборка образа
 * базовая ([click](/Lab3/Base)) ✅
