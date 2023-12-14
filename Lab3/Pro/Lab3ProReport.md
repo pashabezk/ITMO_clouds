@@ -26,11 +26,11 @@
 vault server -dev -dev-root-token-id root
 ```
 
-<img src='./images/Vault_server_start.png' width='400px'/>
+<img src='./images/Vault_server_start.png' width='600px'/>
 
 Помимо консольной работы, можно взаимодействовать с Vault через графический интерфейс. Для этого нужно открыть запущенный веб-сервер: `http://127.0.0.1:8200/`. Для входа используем токен `root`, указанный во время запуска Vault сервера.
 
-<img src='./images/Vault_web_interface.png' width='300px'/>
+<img src='./images/Vault_web_interface.png' width='360px'/>
 
 > Автор данного отчёта понимает, что нельзя использовать в production _небезопасные_ токены, но в целях изучения Vault был указан стандартный токен `root`
 
@@ -74,19 +74,19 @@ VAULT_TOKEN=$GITHUB_REPO_TOKEN /c/vault/vault kv get secret/docker
 
 Убедиться, что секреты и политика созданы успешно можно через веб-интерфейс Vault.
 
-<img src='./images/Vault_secrets.png' width='400px'/>
+<img src='./images/Vault_secrets.png' width='520px'/>
 
-<img src='./images/Vault_policies.png' width='400px'/>
+<img src='./images/Vault_policies.png' width='520px'/>
 
 ### Создание self-hosted runner
 
 Так как используется локальный Vault сервер, то GH actions необходимо тоже запускать локально. Для этого был создан и настроен self-hosted runner.
 
-<img src='./images/GHRunners.png' width='400px'/>
+<img src='./images/GHRunners.png' width='520px'/>
 
 Вот так выглядит настройка конфигурации раннера локально
 
-<img src='./images/RunnerConfig.png' width='400px'/>
+<img src='./images/RunnerConfig.png' width='420px'/>
 
 ### Настройка workflow
 
@@ -137,11 +137,11 @@ jobs:
 
 Рассмотрим изменения более детально.
 
-#### Запуск только по кнопке
+#### 1. Запуск только по кнопке
 
 В триггерах action был оставлен только ручной запуск, так как для работы этого action нужно, чтобы был локально запущен vault.
 
-#### Импорт секретов
+#### 2. Импорт секретов
 
 [Vault-action](https://github.com/marketplace/actions/hashicorp-vault) используется для импорта секретов в виде переменных среды.
 1. Указываем url, на котором запущен Vault: `http://127.0.0.1:8200`.
@@ -160,7 +160,7 @@ jobs:
       secret/data/docker DOCKERHUB_ACCESS_TOKEN
 ```
 
-#### Авторизация в DockerHub
+#### 3. Авторизация в DockerHub
 
 Скорректируем авторизацию в DockerHub. Теперь секреты берём не из GH Secrets, а из переменных среды, куда они были помещены на предыдущем шаге.
 
@@ -177,12 +177,12 @@ jobs:
 Для начала необходимо запустить раннер локально. Он будет ждать, пока GH обратится к нему.
 На рисунке ниже показан запущенный раннер с успешным завершением workflow.
 
-<img src='./images/RunnerSuccess.png' width='400px'/>
+<img src='./images/RunnerSuccess.png' width='420px'/>
 
 С помощью кнопки в GitHub Actions можно запустить workflow.
 На рисунке ниже видно, что после правильной настройки yml-файла workflow успешно отработал.
 
-<img src='./images/GHWorkflows.png' width='400px'/>
+<img src='./images/GHWorkflows.png' width='520px'/>
 
 ## Заключение
 С помощью [HashiCorp Vault](https://www.vaultproject.io/) и self-hosted runner было настроено безопасное использование секретов в GitHub Actions
