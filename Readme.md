@@ -27,5 +27,5 @@
 * продвинутая ([click](/Lab3/Pro)) ✔️
 
 4. Мониторинг сервиса в kubernetes
-* базовая ([click](/Lab4/Base)) ❌
+* базовая ([click](/Lab4/Base)) ✔️
 * продвинутая ([click](/Lab4/Pro)) ❌
