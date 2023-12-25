@@ -28,4 +28,4 @@
 
 4. Мониторинг сервиса в kubernetes
 * базовая ([click](/Lab4/Base)) ✔️
-* продвинутая ([click](/Lab4/Pro)) ❌
+* продвинутая ([click](/Lab4/Pro)) ✔️
